@@ -5,49 +5,40 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ayubi Ocean Putra'),
-        ),
-        /**
-         * row dan collum bisa memiliki banyak wiget
-         * row itu ke samping
-         * collum itu ke bawah
-         */
-        body: Column(
-          children: <Widget>[
-            SizedBox(
-              child: SizedBox(
-                width: 200,
-                child: Container(
-                  child: Text(
-                    'nama',
-                    style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      backgroundColor: Colors.redAccent,
-                      fontFamily: 'arial'//harus ada font nya,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        title: const Text(
+          'My profile',
+           style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+           ),
+           ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
             Text(
-              'Ayubi Ocean Putra',
-               style: TextStyle(
-                backgroundColor: Color.fromARGB(
-                  200, 
-                  100, 
-                  100, 
-                  100,
-                  ),
-               ),
-               ),
+              'Ayubi Ocean Putra', 
+                style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+              ),
+            Row(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[],
+                ),
+                Column(
+                  children: <Widget>[],
+                ),
+              ],
+            ),
           ],
         ),
       ),
-      debugShowCheckedModeBanner: false,);
+    );
   }
 }
