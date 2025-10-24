@@ -62,7 +62,6 @@ class ProfileCard extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.5,
                               decoration: BoxDecoration(
                                 color: Colors.redAccent,
                                 borderRadius: BorderRadius.circular(15),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/about-me.dart';
 import 'package:flutter_application_1/profile.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfileCard(),
+      home: AboutMe(),
       debugShowCheckedModeBanner: false,
     );
   }
