@@ -18,7 +18,6 @@ class ProfileCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              
               height: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -80,7 +79,6 @@ class ProfileCard extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Container(
-                              
                               decoration: BoxDecoration(
                                 color: Colors.redAccent,
                                 borderRadius: BorderRadius.circular(15.0),
