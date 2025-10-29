@@ -3,7 +3,18 @@ import 'package:flutter/material.dart';
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
-   final List<String> BadgeList = const <String>[
+  final List<String> imageList = const <String>[
+    'https://unsplash.com/photos/people-waiting-on-a-train-platform-d2aCbaPymVU',
+    '',
+    '',
+    '',
+    '',
+    '', 
+    '',
+    '',
+  ];
+
+  final List<String> BadgeList = const <String>[
     '💀',
     '👑',
     '😊',
@@ -303,18 +314,43 @@ class AboutMe extends StatelessWidget {
                         child: Container(
                           height: 100,
                           width: 100,
-                          decoration: BoxDecoration(color: Colors.redAccent
-                          ),
+                          decoration: BoxDecoration(color: Colors.redAccent),
                           child: Center(
-                            child: Text('${element}', style: TextStyle(fontSize: 60),),,
-                          )
-                           
+                            child: Text(
+                              '${element}',
+                              style: TextStyle(fontSize: 60),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                // SizedBox(
+                //   height: 110,
+                //   child: ListView(
+                //     children: imageList.map((e) {
+
+                //       return Padding(padding: const EdgeInsets.all(8.0), child: Container(height: 100, width: 100, decoration: BoxDecoration(color: Colors.redAccent),child: Center(child: Text('${e}',style:  TextStyle(fontSize: 60),),),),);
+                //     }),
+                //   ),
+                // ),
+                SizedBox(
+                  height: 110,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: imageList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage('${imageList[index]}'),  
                         ),
                       );
                     },
-                    ).toList(),
                   ),
                 ),
+
                 Text('🎶', style: TextStyle(fontSize: 60)),
               ],
             ),
