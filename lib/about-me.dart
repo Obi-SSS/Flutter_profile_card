@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detail-profile.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
+
+  final title = 'Ucup Gureero';
 
   final List<String> imageList = const <String>[
     'https://unsplash.com/photos/people-waiting-on-a-train-platform-d2aCbaPymVU',
@@ -9,7 +12,7 @@ class AboutMe extends StatelessWidget {
     '',
     '',
     '',
-    '', 
+    '',
     '',
     '',
   ];
@@ -57,7 +60,7 @@ class AboutMe extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text(
-                    'Ayubi Ocean Putra'.toUpperCase(),
+                    title.toUpperCase(),
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -174,6 +177,52 @@ class AboutMe extends StatelessWidget {
                     ),
                   ],
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (builder) => DetailProfile()),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Wiget Profile',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DetailProfile(title: title,)),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Detail Profile'.toUpperCase()),
+                    ),
+                  ),
+                ),
+                /**
+                 * schadule
+                 */
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Container(
@@ -182,16 +231,21 @@ class AboutMe extends StatelessWidget {
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text(
-                      'Scadule'.toUpperCase(),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins',
-                        fontSize: 18,
-                        letterSpacing: 2,
-                        color: Colors.white,
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Scadule'.toUpperCase(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            letterSpacing: 2,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
@@ -344,7 +398,7 @@ class AboutMe extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage('${imageList[index]}'),  
+                          backgroundImage: NetworkImage('${imageList[index]}'),
                         ),
                       );
                     },
